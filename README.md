@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Test Project For Conversion
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Used [React-Modal](https://github.com/reactjs/react-modal) for manage `Modals`
 
-In the project directory, you can run:
+Tried [Styled-Components](https://github.com/styled-components/styled-components) for `Styles`
 
-### `yarn start`
 
-Runs the app in the development mode.\
+## Start App 
+
+Runs the app with `yarn start` in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+## Available Components
+- **ModalComponent**: If opened shows a backdrop and a modal layer, can be closed again
+and have children.
+- **H1Component**: Headline of type H1
+- **H2Component**: Headline of type H2
+- **ParagraphComponent**: Text paragraph
+- **ListComponent**: A list with optional bullets
+- **ButtonComponent**: A clickable button (for demonstration you can console.log on
+button click
+- **LinkComponent**: A clickable link with a URL that opens in a new tab
+- **BoxComponent**: A container with a visible border line that can have multiple children. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Handle Additional Requirements 
+**Used events for handle the relation between `Button` and `Links` to open `Modal`.**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The sample of props of json file for handle events should like be:
+```json
+"Content": {
+    "type": "ButtonComponent",
+    "props": {
+        "text": "Click me to open the modal",
+        "action": "openModal",
+        "target": "Modal"
+    }
+}
+```
+Here, `target` refers to a destination component that we wanted to change on it. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+And `action` also determines the type of functionality depend on target components.
