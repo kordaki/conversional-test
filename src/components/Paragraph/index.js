@@ -2,9 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Paragraph = (props) => {
-  const { text } = props;
-
-  return <p>{text}</p>;
+  const { text, name } = props;
+  return <p name={name}>{text}</p>;
 };
 
 Paragraph.propTypes = {

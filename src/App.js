@@ -1,10 +1,12 @@
-import Generator from "./containers/Generator";
+import React from "react";
 import { data1, data2 } from "./mock";
+import useGenerator from './hooks/useGenerator'
 
 function App() {
+  const generatedElement = useGenerator(data1)
   return (
     <div className="App">
-      <Generator data={data1} />
+      {generatedElement}
     </div>
   );
 }
