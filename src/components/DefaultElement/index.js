@@ -1,12 +1,10 @@
 import React from "react";
 
-const DefaultElement = ({ type, name, children, text, ...other }) => {
-  const trimmedType = type.toLowerCase().replace("component", "");
-  const CustomTag = `${trimmedType}`;
+const DefaultElement = ({ type, name, text, ...other }) => {
+  const CustomTag = type.toLowerCase().replace("component", "");
   return (
     <CustomTag name={name}>
       {text && text}
-      {children && children}
     </CustomTag>
   );
 };
