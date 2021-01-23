@@ -26,6 +26,7 @@ const ModalCmp = ({ name, isOpen, width, height, children }) => {
     <Modal
       isOpen={isOpenModal}
       style={customStyles}
+      ariaHideApp={false}
       contentLabel={name}
       onRequestClose={handleCloseModal}
     >
