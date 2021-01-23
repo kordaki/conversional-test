@@ -1,7 +1,24 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import { useCustomEvent } from "../../hooks/useCustomEvent";
+
 const ModalCmp = ({ name, isOpen, width, height, children }) => {
   const [isOpenModal, setIsOpenModal] = useState(isOpen);
+
+  useCustomEvent({
+    typeArg: "appActions",
+    listener: (e) => {
+      const { action, target, resource } = e.detail;
+      if (target !== name) return;
+      if (action === "openModal") {
+        setIsOpenModal(true);
+      } else if (action === "closeModal") {
+        setIsOpenModal(false)
+      }
+      console.log(`get "${action}" event from: ${resource}`)
+    },
+  });
+
   const customStyles = {
     content: {
       with: width,

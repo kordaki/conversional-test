@@ -24,6 +24,7 @@ function useGenerator(data) {
         return Modal;
       case "ParagraphComponent":
         return Paragraph;
+
       case "H1Component":
       case "H2Component":
       default:
@@ -36,7 +37,12 @@ function useGenerator(data) {
     const Element = detectElement(obj.Content);
     if (obj.Children) {
       return (
-        <Element key={index} name={name} type={obj.Content.type} {...obj.Content.props}>
+        <Element
+          key={index}
+          name={name}
+          type={obj.Content.type}
+          {...obj.Content.props}
+        >
           {Object.keys(obj.Children).map((key, index) =>
             generate(obj.Children[key], key, index)
           )}
@@ -44,7 +50,12 @@ function useGenerator(data) {
       );
     }
     return (
-      <Element key={index} name={name} type={obj.Content.type} {...obj.Content.props} />
+      <Element
+        key={index}
+        name={name}
+        type={obj.Content.type}
+        {...obj.Content.props}
+      />
     );
   }
 
